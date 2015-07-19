@@ -1,0 +1,21 @@
+/*.list {
+	float: left;
+}*/
+
+/*.display {
+	float: right;
+
+}*/
+
+li {
+	display: inline-block;
+	width: 60px;
+	border: solid;
+	text-align: center;
+	margin-right: 20px
+}
+
+.cat_pic {
+	height: 40%;
+	width: 40%;
+}
