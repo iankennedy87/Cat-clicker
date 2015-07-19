@@ -1,4 +1,5 @@
 //MODEL
+
 var cats = [
     new cat("tiger", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTd8cP8NBHDmMCFfcUKyorEicc57MwGVoPcPqoOBtTRNvznligHD5FLn3o", 0),
     new cat("mittens", "http://theheightsanimalhospital.com/clients/15389/images/playful-kitten-6683.jpg", 0),
@@ -15,9 +16,6 @@ function cat(name, path, count) {
         this.count++;
     }
 }
-
-
-
 
 //OCTOPUS
 
@@ -62,6 +60,8 @@ function incrementCounter(cat, id) {
         document.getElementById("cat_count").textContent = "Count: " + cat.count;
     }
 }
+
+
 
 
 //VIEW
