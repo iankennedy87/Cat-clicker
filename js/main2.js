@@ -1,25 +1,30 @@
 //MODEL
-var model = {
-    cat : function(name, path, count) {
+
+function cat(name, path, count) {
         this.name = name;
         this.path = path;
         this.count = count;
         this.increment = function() {
             this.count++;
         }
-    },
+    };
+
+var model = {
+    
 
     cats : [
-        new this.cat("tiger", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTd8cP8NBHDmMCFfcUKyorEicc57MwGVoPcPqoOBtTRNvznligHD5FLn3o", 0),
-        new this.cat("mittens", "http://theheightsanimalhospital.com/clients/15389/images/playful-kitten-6683.jpg", 0),
-        new this.cat("bogie", "http://images4.fanpop.com/image/photos/16100000/Cute-Kitten-kittens-16123158-1280-800.jpg", 0),
-        new this.cat("bella", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTATz6htw-u6LPwmgeYt7VXmtupF8uN3WDf81DXHyNGpD8TnfjDTw", 0),
-        new this.cat("timmy", "http://cdn.cutestpaw.com/wp-content/uploads/2012/04/l-my-first-kitten.jpg", 0)
-    ]
+        new cat("tiger", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTd8cP8NBHDmMCFfcUKyorEicc57MwGVoPcPqoOBtTRNvznligHD5FLn3o", 0),
+        new cat("mittens", "http://theheightsanimalhospital.com/clients/15389/images/playful-kitten-6683.jpg", 0),
+        new cat("bogie", "http://images4.fanpop.com/image/photos/16100000/Cute-Kitten-kittens-16123158-1280-800.jpg", 0),
+        new cat("bella", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTATz6htw-u6LPwmgeYt7VXmtupF8uN3WDf81DXHyNGpD8TnfjDTw", 0),
+        new cat("timmy", "http://cdn.cutestpaw.com/wp-content/uploads/2012/04/l-my-first-kitten.jpg", 0)
+    ],
+
+    currentCat : null,
+
 }
 
 //OCTOPUS
-
 function getCat(i) {
     return model.cats[i];
 }
@@ -63,10 +68,14 @@ function incrementCounter(cat, id) {
 }
 
 
-
+function init() {
+    model.currentCat = model.cats[0];
+    renderCat(model.currentCat, 0);
+}
 
 //VIEW
-
+var pic = getCatPic();
+init();
 // Loop over the cats in our array
 for (var i = 0; i < numCats(); i++) {
 
